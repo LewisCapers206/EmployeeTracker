@@ -52,27 +52,35 @@ function prompt () {
             switch (anwser.action) {
                 case promtMessages.viewALLEmployees:
                     viewALLEmployees();
+                    break;
+                    
 
                 case promtMessages.viewAllDepartments:
                     viewAllDepartments();
+                    break;
 
                 case promtMessages.viewALLRoles:
                     viewALLRoles();
+                    break;
 
                 case promtMessages.addDepartment:
                     addDepartment();
+                    break;
 
                 case promtMessages.addEmployee:
                     addEmployee();
+                    break;
 
                 case promtMessages.addRole:
                     addRole();
+                    break;
 
                 case promtMessages.updateEmployeeRole:
                     updateEmployeeRole();
+                    break;
 
                 case promtMessages.exit:
                     exit();
             }
-        })
+        });
 }
