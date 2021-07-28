@@ -1,6 +1,7 @@
 const mysql = require('mysql');
 const inquirer = require('inquirer');
 const { connect } = require('http2');
+const { exit } = require('process');
 require('console.table');
 
 const promtMessages = {
@@ -45,5 +46,33 @@ function prompt () {
                 promtMessages.updateEmployeeRole,
                 promtMessages.exit
             ]
+        })
+        .then(anwser => {
+            console.log('anwser', anwser);
+            switch (anwser.action) {
+                case promtMessages.viewALLEmployees:
+                    viewALLEmployees();
+
+                case promtMessages.viewAllDepartments:
+                    viewAllDepartments();
+
+                case promtMessages.viewALLRoles:
+                    viewALLRoles();
+
+                case promtMessages.addDepartment:
+                    addDepartment();
+
+                case promtMessages.addEmployee:
+                    addEmployee();
+
+                case promtMessages.addRole:
+                    addRole();
+
+                case promtMessages.updateEmployeeRole:
+                    updateEmployeeRole();
+
+                case promtMessages.exit:
+                    exit();
+            }
         })
 }
